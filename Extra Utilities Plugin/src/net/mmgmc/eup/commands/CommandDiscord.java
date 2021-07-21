@@ -23,14 +23,14 @@ public class CommandDiscord implements CommandExecutor
 			String discordMessage = plugin.getConfig().getString("discordMessage");
 			String discordLink = plugin.getConfig().getString("discordLink");	
 			sender.sendMessage(ChatColor.translateAlternateColorCodes('&', discordMessage) + " " + ChatColor.translateAlternateColorCodes('&', discordLink));
+			return true;
 		}
 		else
 		{
 			EUPUtilities utils = new EUPUtilities(sender);
 			utils.sendInvalidPermMessage();
+			return true;
 		}
-		
-		return false;
 	}
 
 }
