@@ -2,12 +2,14 @@ package net.mmgmc.eup;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import net.mmgmc.eup.commands.CommandDiscord;
 import net.mmgmc.eup.commands.CommandMOTD;
 import net.mmgmc.eup.commands.CommandReload;
 import net.mmgmc.eup.commands.CommandVote;
+import net.mmgmc.eup.events.EventPlayerJoin;
 
 
 public class Main extends JavaPlugin 
@@ -40,5 +42,11 @@ public class Main extends JavaPlugin
 		getCommand("vote").setExecutor(new CommandVote());
 		getCommand("reloadeup").setExecutor(new CommandReload());
 		getCommand("motd").setExecutor(new CommandMOTD());
+	}
+	
+	private void initEvents()
+	{
+		PluginManager pm = getServer().getPluginManager();
+		pm.registerEvents(new EventPlayerJoin(), this);
 	}
 }
