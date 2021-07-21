@@ -4,6 +4,8 @@ api-version: 1.16
 version: 1.0.0
 
 commands:
+    eup:
+        description: Base command for Extra-Utilities-Plugin.
     discord:
         description: Provides the discord link.
     vote:
@@ -14,7 +16,11 @@ commands:
         description: Displays the MOTD.
 
 permissions:
-    eup.reloadcfg:
+    eup.eup:
+        description: Allows sender to use the base command.
+    eup.help:
+        description: Allows sender to see the list of commands.
+    eup.reload:
         description: Allows sender to reload config.yml
     eup.motd:
         description: Allows sender to read the MOTD
