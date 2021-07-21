@@ -14,6 +14,8 @@ commands:
         description: Reloads the config file.
     motd:
         description: Displays the MOTD.
+    skull:
+        description: Gives sender a custom skull.
 
 permissions:
     eup.eup:
@@ -26,3 +28,5 @@ permissions:
         description: Allows sender to read the MOTD
     eup.vote:
         description: Allows sender to read the vote list
+    eup.skull:
+        description: Allows sender to recieve a custom skull.
