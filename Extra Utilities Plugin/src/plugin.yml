@@ -1,0 +1,20 @@
+main: net.mmgmc.eup.Main
+name: Extra-Utilities-Plugin
+api-version: 1.16
+version: 1.0.0
+
+commands:
+    discord:
+        description: Provides the discord link.
+    vote:
+        description: Provides a list of links you can use to vote.
+    reloadeup:
+        description: Reloads the config file.
+    motd:
+        description: Displays the MOTD.
+        
+permissions:
+    eup.reloadcfg:
+        description: Allows sender to reload config.yml
+    eup.motd:
+        description: Allows sender to read the MOTD

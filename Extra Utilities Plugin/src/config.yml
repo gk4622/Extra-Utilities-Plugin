@@ -1,0 +1,6 @@
+prefix: "&7[&eEUP&7]"
+invalidPermission: "&cInvalid permission!"
+# Your Discord server link
+discordLink: "DISCORD SERVER URL HERE"
+# The text shown before the link
+discordMessage: "&6Make sure you join our discord server!"
