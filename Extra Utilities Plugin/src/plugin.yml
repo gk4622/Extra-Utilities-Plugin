@@ -12,9 +12,11 @@ commands:
         description: Reloads the config file.
     motd:
         description: Displays the MOTD.
-        
+
 permissions:
     eup.reloadcfg:
         description: Allows sender to reload config.yml
     eup.motd:
         description: Allows sender to read the MOTD
+    eup.vote:
+        description: Allows sender to read the vote list
