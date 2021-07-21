@@ -22,6 +22,12 @@ public class CommandMOTD implements CommandExecutor
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String arg2, String[] args) 
 	{
+		getMOTD(sender);
+		return false;
+	}
+
+	public void getMOTD(CommandSender sender)
+	{
 		File motdFile = new File(plugin.getDataFolder(), "motd.txt");
 		try
 		{
@@ -57,7 +63,5 @@ public class CommandMOTD implements CommandExecutor
 				e1.printStackTrace();
 			}
 		}
-		return false;
 	}
-
 }
