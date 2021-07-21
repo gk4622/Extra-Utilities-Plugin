@@ -11,6 +11,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
 
+import net.mmgmc.eup.EUPUtilities;
 import net.mmgmc.eup.Main;
 
 public class CommandVote implements CommandExecutor 
@@ -24,13 +25,21 @@ private Plugin plugin = Main.getPlugin(Main.class);
 		File voteFile = new File(plugin.getDataFolder(), "vote.txt");
 		try
 		{
-			Scanner voteFileReader = new Scanner(voteFile);
-			while(voteFileReader.hasNextLine())
+			if(sender.hasPermission("eup.vote"))
 			{
-				String data = voteFileReader.nextLine();
-				sender.sendMessage(ChatColor.translateAlternateColorCodes('&', data));
+				Scanner voteFileReader = new Scanner(voteFile);
+				while(voteFileReader.hasNextLine())
+				{
+					String data = voteFileReader.nextLine();
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', data));
+				}
+				voteFileReader.close();
 			}
-			voteFileReader.close();
+			else
+			{
+				EUPUtilities utils = new EUPUtilities(sender);
+				utils.sendInvalidPermMessage();
+			}
 		}
 		catch (FileNotFoundException e)
 		{
