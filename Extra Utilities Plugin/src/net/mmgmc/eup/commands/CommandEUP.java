@@ -19,22 +19,45 @@ public class CommandEUP implements CommandExecutor
 	public boolean onCommand(CommandSender sender, Command cmd, String arg2, String[] args) 
 	{
 		EUPUtilities utils = new EUPUtilities(sender);
-		if(args.length == 0 && sender.hasPermission("eup.eup"))
+		
+		if(args.length == 0)
 		{
-			aboutPlugin(sender);
+			if(sender.hasPermission("eup.eup"))
+			{
+				aboutPlugin(sender);
+			}
+			else
+			{
+				utils.sendInvalidPermMessage();
+			}
 		}
-		else if(args[0].equalsIgnoreCase("help") && sender.hasPermission("eup.help"))
+		else if(args[0].equalsIgnoreCase("help"))
 		{
-			displayCommands(sender);
+			if(sender.hasPermission("eup.help"))	
+			{
+				displayCommands(sender);
+			}
+			else
+			{
+				utils.sendInvalidPermMessage();
+			}		
 		}
-		else if(args[0].equalsIgnoreCase("reload") && sender.hasPermission("eup.reload"))
+		else if(args[0].equalsIgnoreCase("reload"))
 		{
-			plugin.reloadConfig();
-			sender.sendMessage(pluginPrefix + ChatColor.GREEN + " Successfully reloaded config.yml!");
+			if(sender.hasPermission("eup.reload"))
+			{
+				plugin.reloadConfig();
+				sender.sendMessage(pluginPrefix + ChatColor.GREEN + " Successfully reloaded config.yml!");
+			}
+			else
+			{
+				utils.sendInvalidPermMessage();
+			}
 		}
 		else
 		{
-			utils.sendInvalidPermMessage();
+			String invalidCommandMessage = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("invalidCommand"));
+			sender.sendMessage(pluginPrefix + " " + invalidCommandMessage);
 		}
 		return false;
 	}
