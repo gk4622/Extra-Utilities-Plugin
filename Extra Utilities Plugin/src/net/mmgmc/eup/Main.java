@@ -19,6 +19,7 @@ public class Main extends JavaPlugin
 	public void onEnable()
 	{	
 		initCommands();
+		initEvents();
 		loadConfig();
 		
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Extra-Utilities-Plugin has been enabled!");
