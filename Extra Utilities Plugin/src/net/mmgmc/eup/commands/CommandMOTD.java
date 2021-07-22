@@ -6,11 +6,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import org.bukkit.ChatColor;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.mmgmc.eup.EUPUtilities;
 import net.mmgmc.eup.Main;
 
@@ -18,12 +21,22 @@ public class CommandMOTD implements CommandExecutor
 {
 	
 	private Plugin plugin = Main.getPlugin(Main.class);
+	private String pluginPrefix = ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("prefix"));	
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String arg2, String[] args) 
 	{
-		getMOTD(sender);
-		return false;
+		if(sender instanceof Player)
+		{
+			getMOTD(sender);
+			return true;
+		}
+		else
+		{
+			sender.sendMessage(pluginPrefix + ChatColor.RED + " You must be a player to execute this command!");
+			return true;
+		}		
+		
 	}
 
 	public void getMOTD(CommandSender sender)
@@ -37,7 +50,7 @@ public class CommandMOTD implements CommandExecutor
 				while(motdFileReader.hasNextLine())
 				{
 					String data = motdFileReader.nextLine();
-					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', data));
+					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', PlaceholderAPI.setPlaceholders((OfflinePlayer) sender, data)));
 				}
 				motdFileReader.close();
 			}

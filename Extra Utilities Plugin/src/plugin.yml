@@ -2,6 +2,7 @@ main: net.mmgmc.eup.Main
 name: Extra-Utilities-Plugin
 api-version: 1.16
 version: 1.0.0
+softdepend: [PlaceholderAPI]
 
 commands:
     eup:
