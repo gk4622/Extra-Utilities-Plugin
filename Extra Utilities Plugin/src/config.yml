@@ -8,3 +8,4 @@ trackBlocksBroken: true
 trackBlocksPlaced: true
 trackLogins: true
 trackDisconnects: true
+trackRespawns: true

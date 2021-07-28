@@ -14,6 +14,7 @@ import net.mmgmc.eup.events.EventBlockBreak;
 import net.mmgmc.eup.events.EventBlockPlace;
 import net.mmgmc.eup.events.EventPlayerJoin;
 import net.mmgmc.eup.events.EventPlayerQuit;
+import net.mmgmc.eup.events.EventPlayerRespawn;
 
 
 public class Main extends JavaPlugin 
@@ -55,6 +56,7 @@ public class Main extends JavaPlugin
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new EventPlayerJoin(), this);
 		pm.registerEvents(new EventPlayerQuit(), this);
+		pm.registerEvents(new EventPlayerRespawn(), this);
 		pm.registerEvents(new EventBlockBreak(), this);
 		pm.registerEvents(new EventBlockPlace(), this);
 	}
