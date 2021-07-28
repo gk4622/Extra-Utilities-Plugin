@@ -45,12 +45,12 @@ public class EventBlockBreak implements Listener
 		
 		if(playerDisplayName.equals(p.getPlayerListName()))
 		{
-			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG: BlockBreakEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.GRAY + " has broken " + ChatColor.YELLOW 
+			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " BlockBreakEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.GRAY + " has broken " + ChatColor.YELLOW 
 					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ;
 		}
 		else
 		{
-			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG: BlockBreakEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.YELLOW + " (" + p.getPlayerListName() + ") " + ChatColor.GRAY + "has broken " + ChatColor.YELLOW 
+			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " BlockBreakEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.YELLOW + " (" + p.getPlayerListName() + ") " + ChatColor.GRAY + "has broken " + ChatColor.YELLOW 
 					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ;
 		}
 		
