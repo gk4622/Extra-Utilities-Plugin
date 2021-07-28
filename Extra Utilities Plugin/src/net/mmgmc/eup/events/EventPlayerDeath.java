@@ -41,12 +41,12 @@ public class EventPlayerDeath implements Listener
 			
 		if(playerDisplayName.equals(p.getPlayerListName()))
 		{
-			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " PlayerRespawnEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName 
+			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " PlayerDeathEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName 
 					+ ChatColor.GRAY + " has died @" + ChatColor.YELLOW + " X:" + pX + " Y:" + pY + " Z:" + pZ + ChatColor.GRAY + " in " + ChatColor.YELLOW + pWorld;
 		}
 		else
 		{
-			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " PlayerRespawnEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName 
+			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " PlayerDeathEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName 
 					+ ChatColor.YELLOW + " (" + p.getPlayerListName() + ")" + ChatColor.GRAY + " has died @" + ChatColor.YELLOW + " X:" 
 					+ pX + " Y:" + pY + " Z:" + pZ + ChatColor.GRAY + " in " + ChatColor.YELLOW + pWorld;
 		}
