@@ -11,6 +11,7 @@ import net.mmgmc.eup.commands.CommandMOTD;
 import net.mmgmc.eup.commands.CommandSkull;
 import net.mmgmc.eup.commands.CommandVote;
 import net.mmgmc.eup.events.EventBlockBreak;
+import net.mmgmc.eup.events.EventBlockPlace;
 import net.mmgmc.eup.events.EventPlayerJoin;
 
 
@@ -53,5 +54,6 @@ public class Main extends JavaPlugin
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(new EventPlayerJoin(), this);
 		pm.registerEvents(new EventBlockBreak(), this);
+		pm.registerEvents(new EventBlockPlace(), this);
 	}
 }
