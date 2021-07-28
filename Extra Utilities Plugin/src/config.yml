@@ -9,3 +9,4 @@ trackBlocksPlaced: true
 trackLogins: true
 trackDisconnects: true
 trackRespawns: true
+trackDeaths: true

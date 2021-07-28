@@ -1,7 +1,5 @@
 package net.mmgmc.eup;
 
-// import org.bukkit.Bukkit;
-// import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +13,7 @@ import net.mmgmc.eup.events.EventBlockPlace;
 import net.mmgmc.eup.events.EventPlayerJoin;
 import net.mmgmc.eup.events.EventPlayerQuit;
 import net.mmgmc.eup.events.EventPlayerRespawn;
+import net.mmgmc.eup.events.EventPlayerDeath;
 
 
 public class Main extends JavaPlugin 
@@ -26,14 +25,12 @@ public class Main extends JavaPlugin
 		initCommands();
 		initEvents();
 		loadConfig();
-		
-		// Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Extra-Utilities-Plugin has been enabled!");
 	}
 	
 	@Override
 	public void onDisable()
 	{
-		// Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Extra-Utilities-Plugin has been disabled!");
+		
 	}
 	
 	public void loadConfig()
@@ -57,6 +54,7 @@ public class Main extends JavaPlugin
 		pm.registerEvents(new EventPlayerJoin(), this);
 		pm.registerEvents(new EventPlayerQuit(), this);
 		pm.registerEvents(new EventPlayerRespawn(), this);
+		pm.registerEvents(new EventPlayerDeath(), this);
 		pm.registerEvents(new EventBlockBreak(), this);
 		pm.registerEvents(new EventBlockPlace(), this);
 	}
