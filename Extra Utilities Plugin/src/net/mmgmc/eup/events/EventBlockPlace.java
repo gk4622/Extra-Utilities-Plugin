@@ -14,18 +14,17 @@ import net.mmgmc.eup.Main;
 public class EventBlockPlace implements Listener
 {
 	private Plugin plugin = Main.getPlugin(Main.class);
-	private boolean isEnabled = plugin.getConfig().getBoolean("trackBlocksPlaced");
+	private boolean isLoggingEnabled = plugin.getConfig().getBoolean("trackBlocksPlaced");
 	
 	@EventHandler
 	public void blockPlaceE(BlockPlaceEvent e)
 	{
-		if(isEnabled)
+		if(isLoggingEnabled)
 		{
 			Player p = e.getPlayer();
 			Block block = e.getBlock();
 			
 			Bukkit.getConsoleSender().sendMessage(generateLogMsg(p, block));
-			
 		}
 		else
 		{
@@ -56,5 +55,4 @@ public class EventBlockPlace implements Listener
 		
 		return logMsg;
 	}
-
 }
