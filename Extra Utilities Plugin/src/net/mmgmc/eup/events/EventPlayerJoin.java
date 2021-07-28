@@ -2,6 +2,7 @@ package net.mmgmc.eup.events;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -35,10 +36,11 @@ public class EventPlayerJoin implements Listener
 		String logMsg = "";
 		String playerDisplayName = p.getDisplayName();
 		String playerIPAddress = p.getAddress().getAddress().toString() + ":" + p.getAddress().getPort();
-		int pX = p.getLocation().getBlockX();
-		int pY = p.getLocation().getBlockY();
-		int pZ = p.getLocation().getBlockZ();
-		String pWorld = p.getLocation().getWorld().getName();
+		Location pLoc = p.getLocation();
+		int pX = pLoc.getBlockX();
+		int pY = pLoc.getBlockY();
+		int pZ = pLoc.getBlockZ();
+		String pWorld = pLoc.getWorld().getName();
 		
 		if(playerDisplayName.equals(p.getPlayerListName()))
 		{
