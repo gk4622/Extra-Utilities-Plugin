@@ -2,9 +2,9 @@ prefix: "&7[&eEUP&7]"
 invalidPermission: "&cInvalid permission!"
 invalidCommand: "&cThis is not a command!"
 invalidSyntax: "&cInvalid syntax! Please try again."
-# Your Discord server link
 discordLink: "DISCORD SERVER URL HERE"
-# The text shown before the link
 discordMessage: "&6Make sure you join our discord server!"
 trackBlocksBroken: true
 trackBlocksPlaced: true
+trackLogins: true
+trackDisconnects: true
