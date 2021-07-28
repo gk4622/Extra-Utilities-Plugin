@@ -41,16 +41,17 @@ public class EventBlockPlace implements Listener
 		int bX = block.getX();
 		int bY = block.getY();
 		int bZ = block.getZ();
+		String bWorld = block.getWorld().getName();
 		
 		if(playerDisplayName.equals(p.getPlayerListName()))
 		{
 			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " BlockPlaceEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.GRAY + " has placed " + ChatColor.YELLOW 
-					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ;
+					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ + ChatColor.GRAY + " in " + ChatColor.YELLOW + bWorld;
 		}
 		else
 		{
 			logMsg = pluginPrefix + ChatColor.DARK_RED + " LOG:" + ChatColor.YELLOW + " BlockPlaceEvent" + ChatColor.GRAY + " - " + ChatColor.YELLOW + playerDisplayName + ChatColor.YELLOW + " (" + p.getPlayerListName() + ") " + ChatColor.GRAY + "has placed " + ChatColor.YELLOW 
-					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ;
+					+ blockName + ChatColor.GRAY + " @" + ChatColor.YELLOW + " X:" + bX + " Y:" + bY + " Z:" + bZ + ChatColor.GRAY + " in " + ChatColor.YELLOW + bWorld;
 		}
 		
 		return logMsg;
