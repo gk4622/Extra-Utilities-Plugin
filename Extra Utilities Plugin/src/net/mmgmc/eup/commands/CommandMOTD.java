@@ -28,7 +28,7 @@ public class CommandMOTD implements CommandExecutor
 	{
 		if(sender instanceof Player)
 		{
-			getMOTD(sender);
+			getMOTD(sender, false);
 			return true;
 		}
 		else
@@ -39,7 +39,7 @@ public class CommandMOTD implements CommandExecutor
 		
 	}
 
-	public void getMOTD(CommandSender sender)
+	public void getMOTD(CommandSender sender, boolean onLogin)
 	{
 		File motdFile = new File(plugin.getDataFolder(), "motd.txt");
 		try
@@ -54,10 +54,14 @@ public class CommandMOTD implements CommandExecutor
 				}
 				motdFileReader.close();
 			}
-			else
+			else if(onLogin)
 			{
 				EUPUtilities utils = new EUPUtilities(sender);
 				utils.sendInvalidPermMessage();
+			}
+			else
+			{
+				return;
 			}
 		}
 		catch (FileNotFoundException e)
