@@ -6,3 +6,4 @@ invalidSyntax: "&cInvalid syntax! Please try again."
 discordLink: "DISCORD SERVER URL HERE"
 # The text shown before the link
 discordMessage: "&6Make sure you join our discord server!"
+trackBlocksBroken: false
